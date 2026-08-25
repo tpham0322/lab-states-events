@@ -1,20 +1,20 @@
-import { useState } from "react";
-import { TextInput } from "./components/TextInput/TextInput";
+import { StatsDisplay } from "./components/StatsDisplay/StatsDisplay";
 
 function App() {
-  const [text, setText] = useState("");
+  const testStats = {
+    characterCount: 125,
+    wordCount: 25,
+    readingTime: 0.125,
+  };
 
   return (
     <div className="min-h-screen bg-gray-100 p-8">
-      <div className="mx-auto max-w-2xl">
-        <TextInput
-          onTextChange={setText}
-          placeholder="Type something..."
-        />
+      <div className="mx-auto max-w-4xl">
+        <h1 className="mb-6 text-3xl font-bold">
+          StatsDisplay Test
+        </h1>
 
-        <p className="mt-4 text-lg">
-          Current text: <strong>{text}</strong>
-        </p>
+        <StatsDisplay stats={testStats} />
       </div>
     </div>
   );
